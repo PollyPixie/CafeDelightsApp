@@ -10,7 +10,6 @@
 		7371BA3B2CEF448300853BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA3A2CEF448300853BDB /* AppDelegate.swift */; };
 		7371BA3D2CEF448300853BDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA3C2CEF448300853BDB /* SceneDelegate.swift */; };
 		7371BA3F2CEF448300853BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA3E2CEF448300853BDB /* ViewController.swift */; };
-		7371BA422CEF448300853BDB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7371BA412CEF448300853BDB /* Base */; };
 		7371BA442CEF448500853BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7371BA432CEF448500853BDB /* Assets.xcassets */; };
 		7371BA472CEF448500853BDB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7371BA462CEF448500853BDB /* Base */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		7371BA3A2CEF448300853BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7371BA3C2CEF448300853BDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7371BA3E2CEF448300853BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7371BA412CEF448300853BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7371BA432CEF448500853BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7371BA462CEF448500853BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7371BA482CEF448500853BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +56,60 @@
 			children = (
 				7371BA3A2CEF448300853BDB /* AppDelegate.swift */,
 				7371BA3C2CEF448300853BDB /* SceneDelegate.swift */,
-				7371BA3E2CEF448300853BDB /* ViewController.swift */,
-				7371BA402CEF448300853BDB /* Main.storyboard */,
-				7371BA432CEF448500853BDB /* Assets.xcassets */,
-				7371BA452CEF448500853BDB /* LaunchScreen.storyboard */,
+				7371BA4E2CEF912D00853BDB /* Controllers */,
+				7371BA502CEF915600853BDB /* Models */,
+				7371BA512CEF917300853BDB /* Managers */,
+				7371BA532CEF921600853BDB /* Custom Elements */,
+				7371BA542CEF922400853BDB /* Extensions */,
+				7371BA522CEF918800853BDB /* Resources */,
 				7371BA482CEF448500853BDB /* Info.plist */,
 			);
 			path = CafeDelightsApp;
+			sourceTree = "<group>";
+		};
+		7371BA4E2CEF912D00853BDB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7371BA3E2CEF448300853BDB /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7371BA502CEF915600853BDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7371BA512CEF917300853BDB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7371BA522CEF918800853BDB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7371BA432CEF448500853BDB /* Assets.xcassets */,
+				7371BA452CEF448500853BDB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7371BA532CEF921600853BDB /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Elements";
+			sourceTree = "<group>";
+		};
+		7371BA542CEF922400853BDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +172,6 @@
 			files = (
 				7371BA442CEF448500853BDB /* Assets.xcassets in Resources */,
 				7371BA472CEF448500853BDB /* Base in Resources */,
-				7371BA422CEF448300853BDB /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +191,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7371BA402CEF448300853BDB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7371BA412CEF448300853BDB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7371BA452CEF448500853BDB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +332,6 @@
 				INFOPLIST_FILE = CafeDelightsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -324,7 +359,6 @@
 				INFOPLIST_FILE = CafeDelightsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
