@@ -9,19 +9,31 @@ import UIKit
 
 class CustomProductView: UIView {
     
+    var action: ((Int) -> ())?
+    
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let priceLabel = UILabel()
     
+    private var product: ProductModel?
+    
     init(product: ProductModel) {
         super.init(frame: .zero)
+        self .product = product
         setupView()
         configure(with: product)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //+
+        super.touchesBegan(touches, with: event)
+        if let productId = product?.id {
+            action?(productId)
+        }
     }
 }
 
@@ -40,11 +52,6 @@ private extension CustomProductView {
     func setupView() {
         backgroundColor = .white
         layer.cornerRadius = 16
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.1
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 4
-        layer.masksToBounds = false
         
         addSubview()
         setupImageView()
@@ -69,19 +76,19 @@ private extension CustomProductView {
     
     func setupTitleLabel() {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        titleLabel.textColor = UIColor(cgColor: CGColor(red: 51/255, green: 0/255, blue: 25/255, alpha: 0.8))
+        titleLabel.textColor = Colors.textPrimary
         titleLabel.numberOfLines = 0
     }
     
     func setupDescriptionLabel() {
         descriptionLabel.font = UIFont.systemFont(ofSize: 12)
-        descriptionLabel.textColor = UIColor(cgColor: CGColor(red: 51/255, green: 0/255, blue: 25/255, alpha: 0.8))
+        descriptionLabel.textColor = Colors.textSecondary
         descriptionLabel.numberOfLines = 0
     }
     
     func setupPriceLabel() {
         priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        priceLabel.textColor = UIColor(cgColor: CGColor(red: 102/255, green: 0/255, blue: 51/255, alpha: 1))
+        priceLabel.textColor = Colors.textPrimary
     }
 }
 
@@ -94,34 +101,26 @@ private extension CustomProductView {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let priceBottomConstraint = priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
-        priceBottomConstraint.priority = .defaultHigh 
+        priceBottomConstraint.priority = .defaultLow
         
         NSLayoutConstraint.activate([
-            
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 80),
             imageView.heightAnchor.constraint(equalToConstant: 80),
             
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: descriptionLabel.topAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
-            descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: imageView.topAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: priceLabel.topAnchor, constant: -8),
+            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
+            priceLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
             priceLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-            priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            priceLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             priceBottomConstraint
         ])
     }
 }
-
-
-
-
-

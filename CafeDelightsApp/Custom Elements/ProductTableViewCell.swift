@@ -12,6 +12,12 @@ class ProductTableViewCell: UITableViewCell {
     private let categoryLabel = UILabel()
     private let horizontalScroll = HorizontalScrollView()
     
+    var action: ((Int) -> ())? {
+        didSet {
+            horizontalScroll.action = action
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -33,7 +39,7 @@ class ProductTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         
         categoryLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        categoryLabel.textColor = UIColor(cgColor: CGColor(red: 51/255, green: 0/255, blue: 25/255, alpha: 0.8))
+        categoryLabel.textColor = Colors.textPrimary
         
         contentView.addSubview(categoryLabel)
         contentView.addSubview(horizontalScroll)

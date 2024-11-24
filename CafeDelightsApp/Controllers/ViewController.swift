@@ -12,10 +12,30 @@ class ViewController: UIViewController {
     var productManager: IProductDataManageable?
     
     private let tableView = UITableView()
+    private let horizontalScroll = HorizontalScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        configureHorizontalScroll()
+        setupView()
+    }
+}
+
+// MARK: - Horizontal Scroll Configuration
+private extension ViewController {
+    func presentDetailsVC(_ id: Int) {
+        guard let product = productManager?.getProduct(by: id) else { return }
+        let detailsVC = DetailsViewController()
+        detailsVC.configure(with: product)
+        present(detailsVC, animated: true)
+    }
+    
+    func configureHorizontalScroll() {
+        horizontalScroll.action = presentDetailsVC
+        if let allProducts = productManager?.getAllProducts() {
+            horizontalScroll.configure(with: allProducts)
+        }
+        view.addSubview(horizontalScroll)
     }
 }
 
@@ -32,20 +52,20 @@ extension ViewController: UITableViewDataSource {
             let categories = productManager.getAllProductCategories()
             let category = categories[indexPath.row]
             cell.configure(with: category)
+            cell.action = presentDetailsVC
         } else {
             print("productManager is nil")
         }
         
         cell.selectionStyle = .none
-        
         return cell
     }
 }
 
 // MARK: - Setup View
 private extension ViewController {
-    func setup() {
-        view.backgroundColor = UIColor(cgColor: CGColor(red: 255/255, green: 229/255, blue: 239/255, alpha: 0.9))
+    func setupView() {
+        view.backgroundColor = Colors.backgroundLight
         setupTableView()
         setupLayout()
     }
@@ -60,8 +80,8 @@ private extension ViewController {
 }
 
 // MARK: - Setup Layout
-extension ViewController {
-    private func setupLayout() {
+private extension ViewController {
+    func setupLayout() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

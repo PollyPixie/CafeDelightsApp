@@ -45,7 +45,7 @@ extension ProductRepository: IProductProvidable {
                         id: 4,
                         imageName: "lemonade",
                         title: "Citrus Lemonade",
-                        description: "A refreshing and zesty citrus lemonade made with a blend of fresh oranges, lemons, and limes, served over ice and garnished with mint leaves for a cooling, thirst-quenching experience.",
+                        description: "A refreshing and zesty citrus lemonade made with a blend of fresh oranges, lemons, and limes, served over ice and garnished with mint.",
                         price: 4.0
                     ),
                     ProductModel(
@@ -77,21 +77,21 @@ extension ProductRepository: IProductProvidable {
                     ProductModel(
                         id: 8,
                         imageName: "sandwich",
-                        title: "Chicken Sandwich",
+                        title: "Sandwich",
                         description: "Grilled chicken fillet layered with fresh lettuce and tomatoes in toasted bread. A hearty and wholesome option for a filling meal.",
                         price: 6.0
                     ),
                     ProductModel(
                         id: 9,
                         imageName: "bruschetta",
-                        title: "Bruschetta with Salmon and Avocado",
+                        title: "Bruschetta",
                         description: "Crispy toasted bread topped with creamy avocado slices and delicate smoked salmon. Garnished with arugula for a fresh and flavorful appetizer.",
                         price: 8.0
                     ),
                     ProductModel(
                         id: 10,
                         imageName: "croissant",
-                        title: "Croissant with Ham and Cheese",
+                        title: "Croissant",
                         description: "A flaky golden croissant filled with savory ham and melted cheese. A perfect combination of buttery pastry and hearty flavors.",
                         price: 6.0
                     )

@@ -18,6 +18,8 @@
 		7371BA5E2CF0B58B00853BDB /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA5D2CF0B58B00853BDB /* ProductTableViewCell.swift */; };
 		7371BA602CF0B59900853BDB /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA5F2CF0B59900853BDB /* HorizontalScrollView.swift */; };
 		7371BA622CF0B5AA00853BDB /* CustomProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA612CF0B5AA00853BDB /* CustomProductView.swift */; };
+		7371BA642CF334B200853BDB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA632CF334B200853BDB /* DetailsViewController.swift */; };
+		7371BA662CF3AE9C00853BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371BA652CF3AE9C00853BDB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		7371BA5D2CF0B58B00853BDB /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		7371BA5F2CF0B59900853BDB /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
 		7371BA612CF0B5AA00853BDB /* CustomProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProductView.swift; sourceTree = "<group>"; };
+		7371BA632CF334B200853BDB /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		7371BA652CF3AE9C00853BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,6 @@
 				7371BA502CEF915600853BDB /* Models */,
 				7371BA512CEF917300853BDB /* Managers */,
 				7371BA532CEF921600853BDB /* Custom Elements */,
-				7371BA542CEF922400853BDB /* Extensions */,
 				7371BA522CEF918800853BDB /* Resources */,
 				7371BA482CEF448500853BDB /* Info.plist */,
 			);
@@ -83,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				7371BA3E2CEF448300853BDB /* ViewController.swift */,
+				7371BA632CF334B200853BDB /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,15 +123,9 @@
 				7371BA5D2CF0B58B00853BDB /* ProductTableViewCell.swift */,
 				7371BA5F2CF0B59900853BDB /* HorizontalScrollView.swift */,
 				7371BA612CF0B5AA00853BDB /* CustomProductView.swift */,
+				7371BA652CF3AE9C00853BDB /* Constants.swift */,
 			);
 			path = "Custom Elements";
-			sourceTree = "<group>";
-		};
-		7371BA542CEF922400853BDB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7371BA3F2CEF448300853BDB /* ViewController.swift in Sources */,
+				7371BA662CF3AE9C00853BDB /* Constants.swift in Sources */,
 				7371BA602CF0B59900853BDB /* HorizontalScrollView.swift in Sources */,
 				7371BA5C2CF09A2300853BDB /* ProductCategoryModel.swift in Sources */,
 				7371BA622CF0B5AA00853BDB /* CustomProductView.swift in Sources */,
@@ -209,6 +208,7 @@
 				7371BA3B2CEF448300853BDB /* AppDelegate.swift in Sources */,
 				7371BA5A2CF0914B00853BDB /* ProductDataManager.swift in Sources */,
 				7371BA3D2CEF448300853BDB /* SceneDelegate.swift in Sources */,
+				7371BA642CF334B200853BDB /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

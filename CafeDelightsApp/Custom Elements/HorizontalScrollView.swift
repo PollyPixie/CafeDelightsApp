@@ -12,6 +12,8 @@ class HorizontalScrollView: UIView {
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     
+    var action: ((Int) -> ())?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -26,8 +28,14 @@ class HorizontalScrollView: UIView {
             let productView = CustomProductView(product: product)
             productView.translatesAutoresizingMaskIntoConstraints = false
             productView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-            productView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            productView.action = tapView
             stackView.addArrangedSubview(productView)
+        }
+    }
+    
+    private func tapView(_ id: Int) {
+        if let action = action {
+            action(id)
         }
     }
 }
@@ -52,7 +60,7 @@ private extension HorizontalScrollView {
     func setupLayout() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -67,6 +75,8 @@ private extension HorizontalScrollView {
         ])
     }
 }
+
+
 
 
 
