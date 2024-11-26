@@ -37,7 +37,7 @@ extension ProductDataManager: IProductDataManageable {
     }
     
     func getAllProducts() -> [ProductModel] {
-        return productCategories.flatMap { $0.products } // Собираем все продукты из всех категорий
+        productCategories.flatMap { $0.products }
     }
 }
 

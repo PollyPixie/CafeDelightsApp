@@ -12,30 +12,17 @@ class ViewController: UIViewController {
     var productManager: IProductDataManageable?
     
     private let tableView = UITableView()
-    private let horizontalScroll = HorizontalScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureHorizontalScroll()
         setupView()
     }
-}
-
-// MARK: - Horizontal Scroll Configuration
-private extension ViewController {
-    func presentDetailsVC(_ id: Int) {
+    
+    private func presentDetailsVC(_ id: Int) {
         guard let product = productManager?.getProduct(by: id) else { return }
         let detailsVC = DetailsViewController()
         detailsVC.configure(with: product)
         present(detailsVC, animated: true)
-    }
-    
-    func configureHorizontalScroll() {
-        horizontalScroll.action = presentDetailsVC
-        if let allProducts = productManager?.getAllProducts() {
-            horizontalScroll.configure(with: allProducts)
-        }
-        view.addSubview(horizontalScroll)
     }
 }
 
